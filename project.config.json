@@ -7,9 +7,9 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"miniprogramRoot": "dist/wx",
+	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
-	"appid": "wx555c58536be2cbe7",
+	"appid": "wx6f087303bbc98f3c",
 	"projectname": "quick_wash_weapp",
 	"condition": {
 		"search": {

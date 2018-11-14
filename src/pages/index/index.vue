@@ -1,12 +1,16 @@
 <template>
-  <div class="container" @click="clickHandle">
-    <div class="message">{{msg}}</div>
+  <div class="container" >
+    <div class="message" @click="clickHandle">{{msg}}</div>
     <clickCounterVue />
+    <button type="button" @click="add">add num</button>
+    <button type="button" @click="reset">reset</button>
+    <a href="../order/main" class="navlink">进入计数器页面</a>
   </div>
 </template>
 
 <script>
 import clickCounterVue from '@/components/clickcounter'
+import globalStore from '../../stores/global-store.js'
 
 export default {
   data () {
@@ -19,7 +23,16 @@ export default {
   methods: {
     clickHandle () {
       this.msg = 'Clicked!!!!!!'
+    },
+    add () {
+      globalStore.commit('add', {
+        num: 10
+      })
+    },
+    reset () {
+      globalStore.commit('reset')
     }
+
   }
 }
 </script>
@@ -29,5 +42,8 @@ export default {
   color: red;
   padding: 15px;
   text-align: center;
+}
+.navlink {
+  text-decoration: underline;
 }
 </style>

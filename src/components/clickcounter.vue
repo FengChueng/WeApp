@@ -40,5 +40,7 @@ export default {
   flex: 1;
   margin: 3px;
 }
+
+
 </style>
 
