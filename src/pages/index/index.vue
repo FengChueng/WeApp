@@ -4,7 +4,7 @@
     <clickCounterVue />
     <button type="button" @click="add">add num</button>
     <button type="button" @click="reset">reset</button>
-    <a href="../order/main" class="navlink">进入计数器页面</a>
+    <a href="/pages/order/main" class="navlink">进入计数器页面</a>
   </div>
 </template>
 
