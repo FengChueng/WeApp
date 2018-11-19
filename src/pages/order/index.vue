@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     count () {
-      return globalStore.state.count
+      return globalStore.getters.stateGetter
     }
   }
 }

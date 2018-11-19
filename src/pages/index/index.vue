@@ -1,10 +1,16 @@
 <template>
-  <div class="container" >
-    <div class="message" @click="clickHandle">{{msg}}</div>
+  <div class="container">
+    <div class="message"
+         @click="clickHandle">{{msg}}</div>
     <clickCounterVue />
-    <button type="button" @click="add">add num</button>
-    <button type="button" @click="reset">reset</button>
-    <a href="/pages/order/main" class="navlink">进入计数器页面</a>
+
+    <div class="mesage"> {{ newcounter }} </div>
+    <button type="button"
+            @click="add">add num</button>
+    <button type="button"
+            @click="reset">reset</button>
+    <a href="/pages/order/main"
+       class="navlink">进入计数器页面</a>
   </div>
 </template>
 
@@ -32,7 +38,11 @@ export default {
     reset () {
       globalStore.commit('reset')
     }
-
+  },
+  computed: {
+    newcounter () {
+      return this.$store.state.count
+    }
   }
 }
 </script>

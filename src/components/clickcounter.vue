@@ -1,8 +1,10 @@
 <template>
   <div class="clickcounter">
-    <div class="counter-num">次数：{{num}}</div>
-    <button class="counter-btn" @click="handlerClick">点击</button>
-    <button class="counter-reset" @click="resetClick">清零</button>
+    <div class="counter-num">次数：{{newcounter}}</div>
+    <button class="counter-btn"
+            @click="handlerClick">点击</button>
+    <button class="counter-reset"
+            @click="resetClick">清零</button>
   </div>
 </template>
 
@@ -15,12 +17,20 @@ export default {
   },
   methods: {
     handlerClick () {
-      this.num += 1
+      this.num += 1 + this.$store.getters.stateGetter
+      this.$store.commit('updateCount', this.num)
     },
     resetClick () {
       this.num = 0
+      this.$store.commit('reset', this.num)
+    }
+  },
+  computed: {
+    newcounter () {
+      return this.$store.getters.stateGetter
     }
   }
+
 }
 </script>
 
@@ -40,7 +50,5 @@ export default {
   flex: 1;
   margin: 3px;
 }
-
-
 </style>
 

@@ -17,6 +17,10 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    updateCount (state, payload) {
+      state.count = payload
+    },
+
     add (state, payload) {
       state.count += payload.num
     },
@@ -29,6 +33,11 @@ export default new Vuex.Store({
     updateUser: (state, change) => {
       change.gender = change.gender === 1 ? '男' : '女'
       state.userInfo = change
+    }
+  },
+  getters: {
+    stateGetter: state => {
+      return state.count
     }
   },
   plugins: [
