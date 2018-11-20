@@ -37,17 +37,17 @@ export default {
       // userInfo: this.$store.state.userInfo
     }
   },
-  onLoad (opt) {
-    // wx.showShareMenu({
-    //   withShareTicket: true
-    // })
-    console.log('分享的id:' + opt.id)
-    console.log('分享的id:' + this.$root.$mp.query.id)
-    // if (this.$root.$mp.appOptions.shareTicket) {
-    //   this.shareTicket = this.$root.$mp.appOptions.shareTicket
-    //   console.log('通过携带 shareTicket 的分享卡片进入小程序')
-    // }
-  },
+  // onLoad (opt) {
+  //   // wx.showShareMenu({
+  //   //   withShareTicket: true
+  //   // })
+  //   console.log('分享的id:' + opt.id)
+  //   // console.log('分享的id:' + this.$root.$mp.query.id)
+  //   // if (this.$root.$mp.appOptions.shareTicket) {
+  //   //   this.shareTicket = this.$root.$mp.appOptions.shareTicket
+  //   //   console.log('通过携带 shareTicket 的分享卡片进入小程序')
+  //   // }
+  // },
   // onShow (opt) {
 
   // },
@@ -61,7 +61,7 @@ export default {
     }
     return {
       title: '测试分享',
-      path: this.url + '?id=12',
+      path: 'pages/index/main?id=1234567',
       success: function (res) {
         // that.web_url = return_url
         // 转发成功

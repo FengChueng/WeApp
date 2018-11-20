@@ -11,6 +11,7 @@
             @click="reset">reset</button>
     <a href="/pages/order/main"
        class="navlink">进入计数器页面</a>
+    <div>openid: {{ openid }}</div>
   </div>
 </template>
 
@@ -21,7 +22,8 @@ import globalStore from '../../stores/global-store.js'
 export default {
   data () {
     return {
-      msg: 'Hello'
+      msg: 'Hello',
+      openid: ''
     }
   },
 
@@ -43,6 +45,17 @@ export default {
     newcounter () {
       return this.$store.state.count
     }
+  },
+  // 小程序生命周期
+  onLoad (opt) {
+    this.openid = opt.id
+    var scene = decodeURIComponent(opt.scene)
+    console.log('scene:' + scene)
+  },
+  onUnload () {
+    // 解决同一页面不同参数进入后页面缓存问题
+    // mpvue踩坑
+    Object.assign(this.$data, this.$options.data())
   }
 }
 </script>
